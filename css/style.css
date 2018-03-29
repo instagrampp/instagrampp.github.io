@@ -1,12 +1,13 @@
 html, body {
-    background-color: #263238;
+    background-color: #1b2836;
     color: white;
     font-family: 'Raleway', sans-serif;
     font-weight: 100;
     height: 100vh;
     margin: 0;
 }
-input, textarea,button{
+
+input, textarea, button{
     box-shadow:none !important;
 }
 
@@ -29,7 +30,17 @@ input, textarea,button{
 }
 
 .title {
-    font-size: 3rem;
+    font-size: 2.90rem;
+}
+
+.fa-instagram{
+    color: white;
+    margin-right: 8px;
+}
+
+.header{
+    color: white;
+    font-weight: 600;
 }
 
 .m-b-md {
@@ -37,22 +48,25 @@ input, textarea,button{
 }
             
 .form-control{
-    background: #171e21;    
-    border: 1px solid transparent;
+    background: #141d26;    
+    padding: 0.60rem;
+    border: 1px solid black;
     border-radius: 0;
     color: white !important;
 }
             
 .form-control:focus{
-    background: #171e21;
-    border: 1px solid black;
+    background: #141d26;   
+    border: 1px solid #0a506d;
 }
 
-.loader {
+.loader{
   border: 6px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 6px solid #3498db;
-  border-bottom: 6px solid #3498db;
+  border-top: 6px solid #17a2b8;
+  border-bottom: 6px solid #17a2b8;
+  border-right: 6px solid #141d26; 
+  border-left: 6px solid #141d26; 
   width: 40px;
   height: 40px;
   -webkit-animation: spin 1s linear infinite; /* Safari */
@@ -70,8 +84,13 @@ input, textarea,button{
 }
 
 #danger{
-    font-family: 'Consolas';
+    font-family: 'Inconsolata', monospace;
     display: none;
+}
+
+#find{
+    border-radius: 0;
+    font-family: 'Oxygen', sans-serif;
 }
 
 /* Safari */
