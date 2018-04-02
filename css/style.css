@@ -5,6 +5,7 @@ html, body {
     font-weight: 100;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
 input, textarea, button{
@@ -46,7 +47,18 @@ input, textarea, button{
 .m-b-md {
     margin-bottom: 20px;
 }
-            
+
+.modal-body{
+    padding: 0rem;
+    background: #141d26; 
+}
+
+.modal-footer{
+    background: #141d26;
+    border-top: 1px solid black;
+    font-family: 'Inconsolata', monospace;
+}
+
 .form-control{
     background: #141d26;    
     padding: 0.60rem;
@@ -65,8 +77,9 @@ input, textarea, button{
   border-radius: 50%;
   border-top: 6px solid #17a2b8;
   border-bottom: 6px solid #17a2b8;
-  border-right: 6px solid #141d26; 
-  border-left: 6px solid #141d26; 
+  border-right: 6px solid #1b2836; 
+  border-left: 6px solid #1b2836; 
+  margin-top: 1rem;
   width: 40px;
   height: 40px;
   -webkit-animation: spin 1s linear infinite; /* Safari */
@@ -85,8 +98,12 @@ input, textarea, button{
 }
 
 #danger{
+    background: black;
+    font-size:1rem;
     font-family: 'Inconsolata', monospace;
     display: none;
+    text-align: center;
+    margin-top: 1rem;
 }
 
 #find{
