@@ -25,7 +25,7 @@ $('#find').click(function(e){
             document.getElementById("loading").style.display = "none";
             document.getElementById("danger").style.display = "-webkit-inline-box";
         }
-    }, 5000);
+    }, 6000);
 });
 
 $('#close').click(function(){
