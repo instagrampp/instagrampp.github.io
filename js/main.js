@@ -9,6 +9,7 @@ $('#find').click(function(e){
     document.getElementById("loading").style.display = "-webkit-inline-box";
     document.getElementById("danger").style.display = "none";
     $.getJSON(url, function(data) {
+        clearTimeout(timeout);
         url = "https://i.instagram.com/api/v1/users/"+data.graphql.user.id+"/info/";
         $.getJSON(url, function(data) {
             success = true;
