@@ -15,6 +15,7 @@ $('#find').click(function(e){
             result = data.user.hd_profile_pic_url_info.url;
             document.getElementById("img-profile-picture").src = result;
             document.getElementById("loading").style.display = "none";
+            document.getElementById("danger").style.display = "none";
         });
     });
     
