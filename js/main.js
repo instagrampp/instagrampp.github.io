@@ -15,7 +15,6 @@ $('#find').click(function(e){
             result = data.user.hd_profile_pic_url_info.url;
             document.getElementById("img-profile-picture").src = result;
             document.getElementById("loading").style.display = "none";
-            document.getElementById("img-target").href = result;
         });
     });
     
@@ -28,6 +27,6 @@ $('#find').click(function(e){
     }, 6000);
 });
 
-$('#close').click(function(){
+$('#modal').on('hidden.bs.modal', function (e) {
     document.getElementById("img-profile-picture").src = "";
 });
