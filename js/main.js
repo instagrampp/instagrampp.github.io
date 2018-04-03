@@ -19,7 +19,7 @@ $('#find').click(function(e){
         });
     });
     
-    setTimeout(function() {
+    var timeout = setTimeout(function() {
         if (!success)
         {
             document.getElementById("loading").style.display = "none";
@@ -30,4 +30,5 @@ $('#find').click(function(e){
 
 $('#modal').on('hidden.bs.modal', function (e) {
     document.getElementById("img-profile-picture").src = "";
+    clearTimeout(timeout);
 });
