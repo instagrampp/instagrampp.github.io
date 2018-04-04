@@ -8,19 +8,21 @@ $('#find').click(function(e){
     var result;
     document.getElementById("loading").style.display = "-webkit-inline-box";
     document.getElementById("danger").style.display = "none";
+    document.getElementById("profile").style.display = "none";
     $.getJSON(url, function(data) {
-        clearTimeout(timeout);
         url = "https://i.instagram.com/api/v1/users/"+data.graphql.user.id+"/info/";
         $.getJSON(url, function(data) {
             success = true;
             result = data.user.hd_profile_pic_url_info.url;
             document.getElementById("img-profile-picture").src = result;
+            document.getElementById("profile").style.display = "-webkit-inline-box";
+            document.getElementById("profile").href = "https://instagram.com/"+username;
             document.getElementById("loading").style.display = "none";
             document.getElementById("danger").style.display = "none";
         });
     });
     
-    var timeout = setTimeout(function() {
+    setTimeout(function() {
         if (!success)
         {
             document.getElementById("loading").style.display = "none";
@@ -31,5 +33,4 @@ $('#find').click(function(e){
 
 $('#modal').on('hidden.bs.modal', function (e) {
     document.getElementById("img-profile-picture").src = "";
-    clearTimeout(timeout);
 });
