@@ -98,12 +98,13 @@ input, textarea, button{
 }
 
 #danger{
-    background: black;
     font-size:1rem;
     font-family: 'Inconsolata', monospace;
+    font-weight: 600;
     display: none;
     text-align: center;
     margin-top: 1rem;
+    color:#721c24;
 }
 
 #find{

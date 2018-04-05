@@ -8,7 +8,9 @@ $('#find').click(function(e){
     document.getElementById("loading").style.display = "-webkit-inline-box";
     document.getElementById("danger").style.display = "none";
     document.getElementById("profile").style.display = "none";
-    
+    if(!username){
+            error();
+    }
     $.getJSON(url, function(data) {
         url = "https://i.instagram.com/api/v1/users/"+data.graphql.user.id+"/info/";
         $.getJSON(url, function(data) {
@@ -21,10 +23,15 @@ $('#find').click(function(e){
         });
     })
     .fail(function(){
-            document.getElementById("loading").style.display = "none";
-            document.getElementById("danger").style.display = "-webkit-inline-box";
+        error();
     });
 });
+
+function error(){
+    document.getElementById("modal-body").style.display = "#f8d7da";
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("danger").style.display = "-webkit-inline-box";
+}
 
 $('#modal').on('hidden.bs.modal', function (e) {
     document.getElementById("img-profile-picture").src = "";
