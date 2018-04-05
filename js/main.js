@@ -8,6 +8,7 @@ $('#find').click(function(e){
     document.getElementById("loading").style.display = "-webkit-inline-box";
     document.getElementById("danger").style.display = "none";
     document.getElementById("profile").style.display = "none";
+    document.getElementById("modal-body").style.background = "#141d26";
     if(!username){
             error();
     }
