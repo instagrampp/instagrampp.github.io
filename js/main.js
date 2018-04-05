@@ -35,4 +35,5 @@ function error(){
 
 $('#modal').on('hidden.bs.modal', function (e) {
     document.getElementById("img-profile-picture").src = "";
+    document.getElementById("modal-body").style.background = "#141d26";
 });
