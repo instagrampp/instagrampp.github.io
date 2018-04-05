@@ -28,7 +28,7 @@ $('#find').click(function(e){
 });
 
 function error(){
-    document.getElementById("modal-body").style.display = "#f8d7da";
+    document.getElementById("modal-body").style.background = "#f8d7da";
     document.getElementById("loading").style.display = "none";
     document.getElementById("danger").style.display = "-webkit-inline-box";
 }
