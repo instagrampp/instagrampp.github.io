@@ -25,30 +25,39 @@
                 <div class="username">
                     <form>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" onkeyup="field_control(this)">
                         </div>
-                        <button type="submit" id="find" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#modal"><i class="fas fa-eye"></i> Let See It !</button>
-                        <br>
+                        <button type="submit" id="letseeit" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#modal" disabled><i class="fas fa-eye"></i> Let See It !</button>
                     </form>
                 </div>
 
-            <!-- Modal -->
-                <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                      <div class="modal-body" id="modal-body">
-                        <center><div class="loader" id="loading"></div></center>
-                        <center><div id="danger">Invalid username. Try Again !</div></center>
-                        <img class="img-fluid" id="img-profile-picture">
-                      </div>
-                      <div class="modal-footer">
-                        <a id="profile" target="_blank"><button type="button" class="btn btn-dark btn-sm"><i class="fas fa-external-link-alt"></i> View Profile</button></a>
-                        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" id="close"><i class="fas fa-times-circle"></i> Close </button>
-                      </div>
+                <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body" id="modal-body">
+                                <center><div class="loader" id="loading"></div></center>
+                                <center><div id="danger">Invalid username. Try Again !</div></center>
+                          
+                                <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                                    <ul class="carousel-indicators"></ul>
+                          
+                                <div class="carousel-inner"></div>
+                                    <a class="carousel-control-prev" href="#carousel" data-slide="prev">
+                                        <span class="carousel-control-prev-icon"></span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carousel" data-slide="next">
+                                        <span class="carousel-control-next-icon"></span>
+                                    </a>    
+                                </div>
+                        
+                            <div class="modal-footer">
+                                <a id="profile" target="_blank"><button type="button" class="btn btn-dark"><i class="fas fa-external-link-alt"></i> View Profile</button></a>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal" id="close"><i class="fas fa-times-circle"></i> Close </button>
+                            </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-                
+                </div>  
             </div>
         </div>
         
