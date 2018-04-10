@@ -22,15 +22,41 @@
                     <i class="fab fa-instagram"></i><span class="header">Instagram PP</span> 
                     <p class="text-right text-muted copyright" style="font-size: 0.75rem; margin-top: -10px; font-family: 'Inconsolata', monospace;">Created by <a href="https://github.com/hamzaerdem">hamzaerdem</a></p>
                 </div>
-                <div class="username">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" onkeyup="field_control(this)">
-                        </div>
-                        <button type="submit" id="letseeit" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#modal" disabled><i class="fas fa-eye"></i> Let See It !</button>
-                    </form>
+                <hr>
+                <ul class="nav nav-pills mb-3 nav-justified " id="pills-tab" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="pills-pictures-tab" data-toggle="pill" href="#pills-pictures" role="tab" aria-controls="pills-pictures" aria-selected="true"><i class="fas fa-camera-retro"></i> Photos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="pills-videos-tab" data-toggle="pill" href="#pills-videos" role="tab" aria-controls="pills-videos" aria-selected="false"><i class="fas fa-video"></i> Videos</a>
+                      </li>
+                </ul>
+                
+                <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-pictures" role="tabpanel" aria-labelledby="pills-pictures-tab">
+                    <div class="username">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Username" onkeyup="field_control(this)">
+                            </div>
+                            <button type="submit" id="letseeit" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#modal" disabled><i class="fas fa-eye"></i> Let See It !</button>
+                        </form>
+                    </div>
                 </div>
-
+                  <div class="tab-pane fade" id="pills-videos" role="tabpanel" aria-labelledby="pills-videos-tab">
+                      <div class="video_url">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="video_url" name="video_url" placeholder="Paste video url" required>
+                                 <div class="invalid-feedback">
+                                    Please provide a valid url.
+                                </div>
+                            </div>
+                            <button type="submit" id="download" class="btn btn-danger btn-lg btn-block" ><i class="fas fa-download"></i> Download</button>
+                        </form>
+                    </div>
+                  </div>
+                </div>
                 <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -59,6 +85,7 @@
                     </div>
                 </div>  
             </div>
+            <div id="result"></div>
         </div>
         
         <!--Scripts-->
