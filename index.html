@@ -47,12 +47,12 @@
                       <div class="video_url">
                         <form>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="video_url" name="video_url" placeholder="Paste video url" required>
+                                <input type="text" class="form-control" id="video_url" name="video_url" placeholder="Paste video url">
                                  <div class="invalid-feedback">
                                     Please provide a valid url.
                                 </div>
                             </div>
-                            <button type="submit" id="download" class="btn btn-danger btn-lg btn-block" ><i class="fas fa-download"></i> Download</button>
+                            <button type="submit" id="download" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#" ><i class="fas fa-download"></i> Download</button>
                         </form>
                     </div>
                   </div>
@@ -84,10 +84,16 @@
                         </div>
                     </div>
                 </div>  
+                <div class="modal" id="download_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body" id="modal-body-download">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="result"></div>
         </div>
-        
         <!--Scripts-->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
