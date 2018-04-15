@@ -53,6 +53,20 @@ input, textarea, button{
     background: #141d26; 
 }
 
+.modal-header{
+    background: #141d26; 
+    border-radius: 0;
+    border-bottom: 1px solid black;
+}
+
+.close{
+    color: white;
+}
+
+.close:hover{
+    color: white;
+}
+
 .modal-footer{
     background: #141d26;
     border-top: 1px solid black;
@@ -112,6 +126,15 @@ input, textarea, button{
 #letseeit, #download{
     border-radius: 0;
     font-family: 'Oxygen', sans-serif;
+}
+
+.modal-header{
+    padding: 0px;
+}
+
+.add-photo{
+    height: 2.79rem;
+    border-radius: 0;
 }
 
 .carousel-inner img {
