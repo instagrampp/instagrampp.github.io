@@ -112,7 +112,7 @@ input, textarea, button{
     color: white;
 }
 
-#danger, #danger-stories{
+#danger{
     font-size:1rem;
     font-family: 'Inconsolata', monospace;
     font-weight: 600;
@@ -123,7 +123,7 @@ input, textarea, button{
     margin-bottom: 1rem;
 }
 
-#letseeit, #download, #stories{
+#letseeit, #download{
     border-radius: 0;
     font-family: 'Oxygen', sans-serif;
 }
@@ -142,31 +142,13 @@ input, textarea, button{
       height: 100%;
 }
 
-.stories-inner img {
-    width: 300px;
-}
-
-.stories-inner video {
-    margin-bottom: -5px;
-}
-
-.modal-header-stories{
-    padding: 1rem;
-}
-
 .nav-pills .nav-link{
-    font-size: 0.95rem;
     border-radius: 0px;
     font-weight: 600; 
     background: #243447;
     color: white;
-    border: 1px solid rgba(0,0,0,0);
+    border: 1px solid rgba(0,0,0,0)
 }
-
-#pills-stories-tab, #pills-videos-tab{
-    border-left: 1px solid black;   
-}
-
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
     border-radius: 0px;
     font-weight: 600;
