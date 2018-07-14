@@ -6,6 +6,9 @@ html, body {
     height: 100vh;
     margin: 0;
     overflow: hidden;
+    background-image: url(../images/background.jpg) !important;
+    background-position: 50%;
+    background-size: cover;
 }
 
 input, textarea, button{
