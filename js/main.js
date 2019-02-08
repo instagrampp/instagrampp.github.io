@@ -71,6 +71,7 @@ $('#letseeit').click(function(e){
                 $('#see-more').prop( "disabled", true );
             }
             
+            /*
             result = x.entry_data.ProfilePage[0].graphql.user.profile_pic_url_hd;
                 $( ".carousel-indicators").append("<li data-target='#carousel' data-slide-to='0' class='active'></li>")
                 $( ".carousel-inner" ).append("<div class='carousel-item active'><a href='"+result+"' target='_blank'><img class='img-fluid' id='   img-profile-picture' src='"+result+"'></a></div>");
@@ -87,7 +88,7 @@ $('#letseeit').click(function(e){
                 $( "#see-more").show();
                 $( "#loading").hide();
                 $( "#danger").hide();;
-            
+            */
             array = array.filter(function(v){return v!==''});
             url = "https://i.instagram.com/api/v1/users/"+user_id+"/info/";
             $.getJSON(url, function(data) {
@@ -180,7 +181,7 @@ $('#add-photo').click(function(e){
     e.preventDefault();     
     var photo_url = $("input[name=photo_url]").val();
     var success = false;
-     var xmlHttp = new XMLHttpRequest();
+    var xmlHttp = new XMLHttpRequest();
      xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == XMLHttpRequest.DONE) {
             $('#photo_url').css("border", "1px solid black");
