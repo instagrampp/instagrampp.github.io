@@ -28,6 +28,9 @@
                         <a class="nav-link active" id="pills-pictures-tab" data-toggle="pill" href="#pills-pictures" role="tab" aria-controls="pills-pictures" aria-selected="true"><i class="fas fa-camera-retro"></i> Photos</a>
                       </li>
                       <li class="nav-item">
+                        <a class="nav-link" id="pills-stories-tab" data-toggle="pill" href="#pills-stories" role="tab" aria-controls="pills-stories" aria-selected="false"><i class="fas fa-history"></i> Stories </a>
+                      </li>
+                      <li class="nav-item">
                         <a class="nav-link" id="pills-videos-tab" data-toggle="pill" href="#pills-videos" role="tab" aria-controls="pills-videos" aria-selected="false"><i class="fas fa-video"></i> Videos</a>
                       </li>
                 </ul>
@@ -43,6 +46,18 @@
                         </form>
                     </div>
                 </div>
+
+                <div class="tab-pane fade" id="pills-stories" role="tabpanel" aria-labelledby="pills-stories-tab">
+                    <div class="story_url">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="story_url" name="story_url" placeholder="Username" onkeyup="field_control_stories(this)">
+                            </div>
+                            <button type="submit" id="letseestories" class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#modal2" disabled><i class="fas fa-eye"></i> Look at the Stories!</button>
+                        </form>
+                    </div>
+                  </div>
+                  
                   <div class="tab-pane fade" id="pills-videos" role="tabpanel" aria-labelledby="pills-videos-tab">
                       <div class="video_url">
                         <form>
@@ -57,6 +72,7 @@
                     </div>
                   </div>
                 </div>
+                
                 <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -69,9 +85,9 @@
                                 <center><div id="danger">Invalid username. Try Again !</div></center>
                           
                                 <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                                    <ul class="carousel-indicators"></ul>
+                                <ul class="carousel-indicators" id="carousel-indicators-picture"></ul>
                           
-                                <div class="carousel-inner"></div>
+                                <div class="carousel-inner" id="carousel-inner-picture"></div>
                                     <a class="carousel-control-prev" href="#carousel" data-slide="prev" id="letseeit-control-prev">
                                         <span class="carousel-control-prev-icon"></span>
                                     </a>
@@ -82,13 +98,51 @@
                         
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-info" id="see-more"><i class="fas fa-plus-circle"></i> See More</button>
-                                <!--<a id="profile" target="_blank"><button type="button" class="btn btn-dark"><i class="fas fa-external-link-alt"></i> </button></a>-->
+                                <a id="profile" target="_blank"><button type="button" class="btn btn-dark"><i class="fas fa-external-link-alt"></i> </button></a>
                                 <button type="button" class="btn btn-danger " data-dismiss="modal" id="close"><i class="fas fa-times-circle"></i> Close </button>
                             </div>
                             </div>
                         </div>
                     </div>
                 </div>  
+                
+                 <div class="modal" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body" id="modal-body-stories">
+                                <center><div class="loader2" id="loading2"></div></center>
+                                <center><div id="danger2">Invalid username. Try Again !</div></center>
+                          
+                                <div id="carousel2" class="carousel slide" data-ride="carousel2" data-interval="false">
+                                    <ul class="carousel-indicators" id="carousel-indicators-stories"></ul>
+                          
+                                <div class="carousel-inner" id="carousel-inner-stories"></div>
+
+                                    <a class="carousel-control-prev" href="#carousel2" data-slide="prev" id="letseestories-control-prev">
+                                        <span class="carousel-control-prev-icon"></span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carousel2" data-slide="next" id="letseestories-control-next">
+                                        <span class="carousel-control-next-icon"></span>
+                                    </a>    
+                                </div>
+                        
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger " data-dismiss="modal" id="close"><i class="fas fa-times-circle"></i> Close </button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+
+
+
+
+
+
+
+
+
+
                 <div class="modal" id="download_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
