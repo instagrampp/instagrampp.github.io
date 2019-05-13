@@ -53,11 +53,11 @@ input, textarea, button{
 
 .modal-body{
     padding: 0rem;
-    background: #141d26; 
+    background: #141d26;
 }
 
 .modal-header{
-    background: #141d26; 
+    background: #141d26;
     border-radius: 0;
     border-bottom: 1px solid black;
 }
@@ -77,16 +77,25 @@ input, textarea, button{
 }
 
 .form-control{
-    background: #141d26;    
+    background: #141d26;
     padding: 0.60rem;
     border: 1px solid black;
-    border-radius: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     color: white !important;
 }
-            
+
 .form-control:focus{
-    background: #141d26;   
-    border: 1px solid #0a506d;
+    background: #141d26;
+    border: 1px solid rgba(23, 162, 184, 0.5);
+}
+
+.stories_form:focus{
+    border: 1px solid rgba(255, 193, 7, 0.5); !important;
+}
+
+.video_form:focus{
+    border: 1px solid rgba(220, 53, 69, 0.5); !important;
 }
 
 .loader{
@@ -94,8 +103,8 @@ input, textarea, button{
   border-radius: 50%;
   border-top: 6px solid #17a2b8;
   border-bottom: 6px solid #17a2b8;
-  border-right: 6px solid #1b2836; 
-  border-left: 6px solid #1b2836; 
+  border-right: 6px solid #1b2836;
+  border-left: 6px solid #1b2836;
   margin-top: 1rem;
   margin-bottom: 1rem;
   width: 40px;
@@ -110,8 +119,8 @@ input, textarea, button{
   border-radius: 50%;
   border-top: 6px solid #ffc700;
   border-bottom: 6px solid #ffc700;
-  border-right: 6px solid #1b2836; 
-  border-left: 6px solid #1b2836; 
+  border-right: 6px solid #1b2836;
+  border-left: 6px solid #1b2836;
   margin-top: 1rem;
   margin-bottom: 1rem;
   width: 40px;
@@ -156,8 +165,8 @@ input, textarea, button{
 
 
 #letseeit, #download, #letseestories{
-    border-radius: 0;
-    font-family: 'Oxygen', sans-serif;
+
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .modal-header{
@@ -174,12 +183,25 @@ input, textarea, button{
       height: 100%;
 }
 
+.photos_tab{
+    border-top-left-radius: 10px !important;
+}
+
+.photos_tab:active{
+    background: black !important;
+}
+
+.video_tab{
+    border-top-right-radius: 10px !important;
+}
+
+
 .nav-pills .nav-link{
     border-radius: 0px;
-    font-weight: 600; 
+    font-weight: 600;
     background: #243447;
     color: white;
-    border: 1px solid rgba(0,0,0,0)
+    border: 1px solid rgba(0,0,0,0);
 }
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
     border-radius: 0px;

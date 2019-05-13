@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans:500" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
@@ -19,22 +20,22 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    <i class="fab fa-instagram"></i><span class="header">Instagram PP</span> 
+                    <i class="fab fa-instagram"></i><span class="header">Instagram PP</span>
                     <p class="text-right text-muted copyright" style="font-size: 0.75rem; margin-top: -10px; font-family: 'Inconsolata', monospace;">Created by <a href="https://github.com/hamzaerdem">hamzaerdem</a></p>
                 </div>
                 <hr>
                 <ul class="nav nav-pills mb-3 nav-justified " id="pills-tab" role="tablist">
                       <li class="nav-item">
-                        <a class="nav-link active" id="pills-pictures-tab" data-toggle="pill" href="#pills-pictures" role="tab" aria-controls="pills-pictures" aria-selected="true"><i class="fas fa-camera-retro"></i> Photos</a>
+                        <a class="nav-link active photos_tab" id="pills-pictures-tab" data-toggle="pill" href="#pills-pictures" role="tab" aria-controls="pills-pictures" aria-selected="true"><i class="fas fa-camera-retro"></i> Photos</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" id="pills-stories-tab" data-toggle="pill" href="#pills-stories" role="tab" aria-controls="pills-stories" aria-selected="false"><i class="fas fa-history"></i> Stories </a>
+                        <a class="nav-link stories_tab" id="pills-stories-tab" data-toggle="pill" href="#pills-stories" role="tab" aria-controls="pills-stories" aria-selected="false"><i class="fas fa-history"></i> Stories </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" id="pills-videos-tab" data-toggle="pill" href="#pills-videos" role="tab" aria-controls="pills-videos" aria-selected="false"><i class="fas fa-video"></i> Videos</a>
+                        <a class="nav-link video_tab" id="pills-videos-tab" data-toggle="pill" href="#pills-videos" role="tab" aria-controls="pills-videos" aria-selected="false"><i class="fas fa-video"></i> Videos</a>
                       </li>
                 </ul>
-                
+
                 <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-pictures" role="tabpanel" aria-labelledby="pills-pictures-tab">
                     <div class="username">
@@ -51,18 +52,18 @@
                     <div class="story_url">
                         <form>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="story_url" name="story_url" placeholder="Username" onkeyup="field_control_stories(this)">
+                                <input type="text" class="form-control stories_form" id="story_url" name="story_url" placeholder="Username" onkeyup="field_control_stories(this)">
                             </div>
                             <button type="submit" id="letseestories" class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#modal2" disabled><i class="fas fa-eye"></i> Look at the Stories!</button>
                         </form>
                     </div>
                   </div>
-                  
+
                   <div class="tab-pane fade" id="pills-videos" role="tabpanel" aria-labelledby="pills-videos-tab">
                       <div class="video_url">
                         <form>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="video_url" name="video_url" placeholder="Paste video url" onkeyup="field_control_download(this)">
+                                <input type="text" class="form-control video_form" id="video_url" name="video_url" placeholder="Paste video url" onkeyup="field_control_download(this)">
                                  <div class="invalid-feedback">
                                     Please provide a valid url.
                                 </div>
@@ -72,7 +73,7 @@
                     </div>
                   </div>
                 </div>
-                
+
                 <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -83,19 +84,19 @@
                             <div class="modal-body" id="modal-body">
                                 <center><div class="loader" id="loading"></div></center>
                                 <center><div id="danger">Invalid username. Try Again !</div></center>
-                          
+
                                 <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
                                 <ul class="carousel-indicators" id="carousel-indicators-picture"></ul>
-                          
+
                                 <div class="carousel-inner" id="carousel-inner-picture"></div>
                                     <a class="carousel-control-prev" href="#carousel" data-slide="prev" id="letseeit-control-prev">
                                         <span class="carousel-control-prev-icon"></span>
                                     </a>
                                     <a class="carousel-control-next" href="#carousel" data-slide="next" id="letseeit-control-next">
                                         <span class="carousel-control-next-icon"></span>
-                                    </a>    
+                                    </a>
                                 </div>
-                        
+
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-info" id="see-more"><i class="fas fa-plus-circle"></i> See More</button>
                                 <a id="profile" target="_blank"><button type="button" class="btn btn-dark"><i class="fas fa-external-link-alt"></i> </button></a>
@@ -104,18 +105,18 @@
                             </div>
                         </div>
                     </div>
-                </div>  
-                
+                </div>
+
                  <div class="modal" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-body" id="modal-body-stories">
                                 <center><div class="loader2" id="loading2"></div></center>
                                 <center><div id="danger2">Invalid username. Try Again !</div></center>
-                          
+
                                 <div id="carousel2" class="carousel slide" data-ride="carousel2" data-interval="false">
                                     <ul class="carousel-indicators" id="carousel-indicators-stories"></ul>
-                          
+
                                 <div class="carousel-inner" id="carousel-inner-stories"></div>
 
                                     <a class="carousel-control-prev" href="#carousel2" data-slide="prev" id="letseestories-control-prev">
@@ -123,16 +124,16 @@
                                     </a>
                                     <a class="carousel-control-next" href="#carousel2" data-slide="next" id="letseestories-control-next">
                                         <span class="carousel-control-next-icon"></span>
-                                    </a>    
+                                    </a>
                                 </div>
-                        
+
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger " data-dismiss="modal" id="close"><i class="fas fa-times-circle"></i> Close </button>
                             </div>
                             </div>
                         </div>
                     </div>
-                </div>  
+                </div>
 
 
 
