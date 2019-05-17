@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip(); 
+    $('[data-toggle="tooltip"]').tooltip();
 });
 
 function field_control(ev) {
@@ -48,18 +48,20 @@ $('#letseeit').click(function(e){
     $( "#see-more").hide();
     $('#see-more').prop( "disabled", false );
     $( "#see-more-header").hide();
-    
+
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == XMLHttpRequest.DONE) {
-            
+
             var instagramDocument = document.implementation.createHTMLDocument().documentElement;
             instagramDocument.innerHTML = xmlHttp.responseText;
-            
+
             x = instagramDocument.children[1].querySelectorAll("script");
-                    
+
             x = x[0].firstChild.data;
-            x = x.replace("window._sharedData = ", "").replace(";" , "");
+            //x = x.replace("window._sharedData = ", "").replace(";" , "");
+            x = x.replace("window._sharedData = ", "");
+            x = x.slice(0, -1);
             x = jQuery.parseJSON(x);
             user_id = x.entry_data.ProfilePage[0].graphql.user.id;
             is_private = x.entry_data.ProfilePage[0].graphql.user.is_private;
@@ -79,7 +81,7 @@ $('#letseeit').click(function(e){
             else{
                 $('#see-more').prop( "disabled", true );
             }
-            
+
             /*
             result = x.entry_data.ProfilePage[0].graphql.user.profile_pic_url_hd;
                 $( ".carousel-indicators").append("<li data-target='#carousel' data-slide-to='0' class='active'></li>")
@@ -151,7 +153,7 @@ $('#modal2').on('hidden.bs.modal', function (e) {
 })
 
 $('#download').click(function(e){
-    e.preventDefault();     
+    e.preventDefault();
     var video_url = $("input[name=video_url]").val();
     var success = false;
     $("#download").attr("data-target", "#");
@@ -183,12 +185,12 @@ $('#download').click(function(e){
     else{
         $('#video_url').css("border", "1px solid black");
         $('.invalid-feedback').hide();
-    }  
+    }
 });
 
 
 $('#add-photo').click(function(e){
-    e.preventDefault();     
+    e.preventDefault();
     var photo_url = $("input[name=photo_url]").val();
     var success = false;
     var xmlHttp = new XMLHttpRequest();
@@ -199,7 +201,7 @@ $('#add-photo').click(function(e){
             instagramDocument.innerHTML = xmlHttp.responseText;
             var p_url=instagramDocument.querySelector("meta[property='og:image']").getAttribute("content");
             $('#photo_url').val("");
-            var i = $(".carousel-indicators").last()[0].childElementCount;  //last element            
+            var i = $(".carousel-indicators").last()[0].childElementCount;  //last element
             $( ".carousel-indicators").append("<li data-target='#carousel' data-slide-to='"+(i)+"'></li>");
             $( ".carousel-inner" ).append("<div class='carousel-item'><a href='"+p_url+"' target='_blank'><img class='img-fluid' id='img-profile-picture' src='"+p_url+"'></a></div>");
             $('#carousel').carousel(i);
@@ -217,7 +219,7 @@ $('#add-photo').click(function(e){
 $(' #see-more').click(function(e){
     e.preventDefault();
     $(' #see-more-header').toggle(200);
-    
+
 });
 
 
@@ -247,7 +249,7 @@ $('#letseestories').click(function(e){
             if(data.stories[0].video){
                 $( "#carousel-indicators-stories").append("<li data-target='#carousel2' data-slide-to='0' class='active'></li>")
                 $( "#carousel-inner-stories" ).append("<div class='carousel-item active'><a href='"+data.stories[0].video.url+"' target='_blank'><img class='img-fluid' id='img-profile-picture' src='"+data.stories[0].video.url+"'></a></div>");
-             
+
             }
             else{
                 $( "#carousel-indicators-stories").append("<li data-target='#carousel2' data-slide-to='0' class='active'></li>")
@@ -275,8 +277,3 @@ $('#letseestories').click(function(e){
 
 
 });
-
-
-
-
-
